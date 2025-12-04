@@ -51,3 +51,9 @@ if __name__ == "__main__":
         
         print("\n--- Top 5 Estados por Número de Clientes ---")
         print(ranking_estados.head())
+
+        # --- Salva o resultado da análise em um novo arquivo CSV ---
+        caminho_saida_csv = Path("ranking_clientes_por_estado.csv")
+        ranking_estados.to_csv(caminho_saida_csv, index=False, encoding='utf-8')
+        
+        print(f"\n✅ Análise salva com sucesso em: {caminho_saida_csv}")
